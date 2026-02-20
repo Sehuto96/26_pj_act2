@@ -14,7 +14,7 @@ public class Main {
         System.out.println(cuenta.getSaldo()); // Debería ser 700
         cuenta.retirar(1000); // Debería mostrar error de fondos insuficientes
 
-        Estudiante e = new Estudiante("Pedro", 21, 5.1);
+        Estudiante e = new Estudiante("Pedro", 21, 2.5);
         e.mostrarInfo(); // Debería indicar REPROBADO
     }
 

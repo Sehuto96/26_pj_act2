@@ -1,13 +1,14 @@
 package com.example;
 
 public class Libro {
+
     private String titulo;
     private String autor;
     private int paginas;
 
-    public Libro(){
+    public Libro() {
         this.titulo = "Desconocido";
-        this.autor = "Anonimo";
+        this.autor = "Anónimo";
         this.paginas = 0;
     }
 
@@ -23,10 +24,9 @@ public class Libro {
         this.paginas = paginas;
     }
 
-    public void mostrarDetalles(){
-        System.out.println("Titulo: " + titulo);
-        System.out.println("Autor: " + autor);
-        System.out.println("Paginas: " + paginas);
+    public void mostrarDetalles() {
+        System.out.println("Libro: " + titulo +
+                " | Autor: " + autor +
+                " | Páginas: " + paginas);
     }
-
 }

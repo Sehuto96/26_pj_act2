@@ -1,6 +1,7 @@
 package com.example;
 
 public class Estudiante {
+
     private String nombre;
     private int edad;
     private double promedio;
@@ -13,17 +14,25 @@ public class Estudiante {
 
     public Estudiante(String nombre, int edad, double promedio) {
         this.nombre = nombre;
-        this.edad = edad;
+        setEdad(edad);
         this.promedio = promedio;
     }
 
-   // Validación edad > 0
-    public void setEdad(int edad) {
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
         if (edad > 0) {
             this.edad = edad;
-        } else {
-            System.out.println("La edad debe ser mayor a 0.");
         }
     }
 
@@ -31,26 +40,15 @@ public class Estudiante {
         return promedio;
     }
 
-    // Validación promedio entre 0 y 5
     public void setPromedio(double promedio) {
-
-        if (promedio >= 0 && promedio <= 5) {
-            this.promedio = promedio;
-        } else  {
-            System.out.println("El promedio debe estar entre 0 y 5.");
-        } 
+        this.promedio = promedio;
     }
 
-    private static final double NOTA_APROBACION = 3.0;
-    // Método lógico (retorna boolean)
     public boolean haAprobado() {
-
-        return promedio >= NOTA_APROBACION;
+        return promedio >= 3.0;
     }
 
-    // Mostrar información
     public void mostrarInfo() {
-
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
         System.out.println("Promedio: " + promedio);
@@ -61,5 +59,4 @@ public class Estudiante {
             System.out.println("Estado: REPROBADO");
         }
     }
-
 }

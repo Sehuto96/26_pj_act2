@@ -1,14 +1,16 @@
 package com.example;
 
 public class CuentaBancaria {
+
     private String titular;
     private double saldo;
 
-    public CuentaBancaria(String titular, double saldo) {
+    public CuentaBancaria(String titular, double saldoInicial) {
         this.titular = titular;
-        this.saldo = saldo;
-        if (this.saldo < 0) {
+        if (saldoInicial < 0) {
             this.saldo = 0;
+        } else {
+            this.saldo = saldoInicial;
         }
     }
 
@@ -33,11 +35,8 @@ public class CuentaBancaria {
     public void retirar(double cantidad) {
         if (cantidad > 0 && cantidad <= saldo) {
             saldo -= cantidad;
-        }
-
-        else {
-            System.out.println("Fondos insuficientes para retirar ");
+        } else {
+            System.out.println("Fondos insuficientes");
         }
     }
-
 }
